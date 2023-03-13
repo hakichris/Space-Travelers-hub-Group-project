@@ -4,7 +4,7 @@
 
   <br/>
 
-  <h3><b> Space-Travellers-hub </b></h3>
+  <h3><b> Space Travellers' Hub </b></h3>
 
 </div>
 
@@ -28,9 +28,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Space-Travellers-hub<a name="about-project"></a>
+# 📖 Space Travellers' Hub<a name="about-project"></a>
 
-**Space-Travellers-hub** Is a web application built with react and redux and spaceXAPI. Users can view rockets and missions and create resrvations.
+**Space Travellers' Hub** Is a web application built with react and redux and spaceXAPI. Users can view rockets and missions and create resrvations.
 
 ## 🛠 Built With <a name="built-with"></a>
 
