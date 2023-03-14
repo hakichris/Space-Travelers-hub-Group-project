@@ -190,3 +190,17 @@ ul {
   margin: 0;
   padding: 0.25rem 0;
 }
+
+.error-sect {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-sect h1 {
+  text-align: center;
+}
+
+.back-home {
+  margin: 1rem auto;
+}
