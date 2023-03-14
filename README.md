@@ -90,7 +90,7 @@ To get app running:
 - Twitter: [@ambrose_kibet](https://twitter.com/ambrose_kibet)
 - LinkedIn: [ambrose-kibet](https://www.linkedin.com/in/ambrose-kibet-56a791122/)
 
-👤 **Author1**
+👤 **Christian Hakizimana**
 
 - GitHub: [@Christian Hakizimana](https://github.com/hakichris)
 - Twitter: [@Christian Hakizimana](https://twitter.com/hakichris2)
