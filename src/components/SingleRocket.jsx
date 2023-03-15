@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { toggleRocket } from '../redux/rocketsSlice';
+import { rocketActions } from '../redux/rocketsSlice';
 
 const Rocket = ({
   id, rocketName, description, Image, reserved,
 }) => {
   const dispatch = useDispatch();
+  console.log('the id value:', id);
   return (
     <div className="container">
       <div><img className="image" src={Image} alt=" " /></div>
@@ -20,7 +21,7 @@ const Rocket = ({
           </span>
           {description}
         </p>
-        <button className={reserved ? 'reservedbutton' : 'reserverocket'} type="button" onClick={() => dispatch(toggleRocket(id))}>
+        <button className={reserved ? 'reservedbutton' : 'reserverocket'} type="button" onClick={() => dispatch(rocketActions.ToggleReserved(id))}>
           {' '}
           {reserved ? 'Cancel reservation' : 'Reserve Rocket' }
         </button>
@@ -30,7 +31,7 @@ const Rocket = ({
 };
 
 Rocket.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   rocketName: PropTypes.string.isRequired,
   Image: PropTypes.string.isRequired,
