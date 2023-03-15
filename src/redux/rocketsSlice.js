@@ -4,7 +4,7 @@ import axios from 'axios';
 const url = 'https://api.spacexdata.com/v3/rockets';
 export const getrocket = createAsyncThunk(
   'rocket/getrocket', async () => {
-    const res = await axios.get(url);
+    const res = await axios(url);
     const response = res.data;
     return response;
   },
@@ -24,18 +24,18 @@ const rocketSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getrocket.fulfilled, (state, action) => {
-      const newRocket = action.map(
+      const newRocket = action.payload.map(
         ({
-          id, rocketName, rocketDescription, rocketImage,
+          id, rocket_name: rocketName, description, flickr_images: Image,
         }) => ({
           id,
           rocketName,
-          rocketDescription,
-          rocketImage,
+          description,
+          Image: Image[0],
           reserved: false,
         }),
       );
-      return { ...state, rocketList: newRocket };
+      return { ...state, rocket: newRocket };
     });
   },
 });
