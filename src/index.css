@@ -217,11 +217,13 @@ ul {
 .display-items {
   border: 0.5pt solid grey;
   border-radius: 0.25rem;
+  width: 35vw;
 }
 
 .display-items li {
   padding: 0.5rem;
   border-bottom: 0.5pt solid grey;
+  width: 100%;
 }
 
 .display-items:last-child {
