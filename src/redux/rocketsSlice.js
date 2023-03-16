@@ -28,18 +28,21 @@ const rocketSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getrocket.fulfilled, (state, action) => {
-      const newRocket = action.payload.map(
-        ({
-          id, rocket_name: rocketName, description, flickr_images: Image,
-        }) => ({
-          id,
-          rocketName,
-          description,
-          Image: Image[0],
-          reserved: false,
-        }),
-      );
-      return { ...state, rocket: newRocket };
+      if (state.rocket.length === 0) {
+        const newRocket = action.payload.map(
+          ({
+            id, rocket_name: rocketName, description, flickr_images: Image,
+          }) => ({
+            id,
+            rocketName,
+            description,
+            Image: Image[0],
+            reserved: false,
+          }),
+        );
+        return { ...state, rocket: newRocket };
+      }
+      return state;
     });
   },
 });
