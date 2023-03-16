@@ -1,8 +1,15 @@
+import { useEffect } from 'react';
 import SingleMission from '../components/SingleMission';
-import { useAppSelctor } from '../redux/reduxHooks';
+import { useAppDispatch, useAppSelctor } from '../redux/reduxHooks';
+import { getMissions } from '../redux/missionsSlice';
 
 const Missions = () => {
   const { missionList } = useAppSelctor((state) => state.missions);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getMissions());
+  }, [dispatch]);
+
   return (
     <section className="section-container">
       <div className="three-column">
