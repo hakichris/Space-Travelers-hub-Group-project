@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "redux-axios": "^0.0.2",
     "redux-mock-store": "^1.5.4",
+    "trim-newlines": "^4.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
