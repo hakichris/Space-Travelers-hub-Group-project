@@ -11,25 +11,30 @@ const Profile = () => {
   return (
     <sectioon className="section-container two-column">
       <h2 className="title-three"> My Rockects</h2>
-      <h2 className="title-three"> My missions</h2>
-      <ul className="display-items">
-        { rocketFiltered.length > 0 ? (
-          rocketFiltered.map((rocket) => (
-            <li key={rocket.id}>
-              <p>
-                {' '}
-                {rocket.rocketName}
-              </p>
+      <table>
+        <ul className="display-items">
+          { rocketFiltered.length > 0 ? (
+            rocketFiltered.map((rocket) => (
+              <tr key={rocket.id}>
+                <td>
+                  <li key={rocket.id}>
+                    <p>
+                      {' '}
+                      {rocket.rocketName}
+                    </p>
+                  </li>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <li>
+              <h3 className="title-three"> no booked rocket at the moments </h3>
             </li>
-          ))
-        ) : (
-          <li>
-            <h3 className="title-three"> no booked rocket at the moments </h3>
-          </li>
-        )}
-        ;
-      </ul>
+          )}
+        </ul>
 
+      </table>
+      <h2 className="title-three"> My missions</h2>
       {/* <ul className="display-items">
         {filteredList.length > 0 ? (
           filteredList.map((mision) => (
