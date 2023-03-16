@@ -1,13 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const url = 'https://api.spacexdata.com/v3/missions';
 export const getMissions = createAsyncThunk(
   'missions/getmissions',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios(url);
-
+      const response = await fetch(url);
+      const data = await response.json();
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.msg);
@@ -34,15 +33,17 @@ const mission = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getMissions.fulfilled, (state, { payload }) => {
-      const newMissions = payload.map(
-        ({ mission_name, mission_id, description }) => ({
-          mission_name,
-          mission_id,
-          description,
-          reserved: false,
-        })
-      );
-      return { ...state, missionList: newMissions };
+      if (!state.missionList.length) {
+        const newMissions = payload.map(
+          ({ mission_name, mission_id, description }) => ({
+            mission_name,
+            mission_id,
+            description,
+            reserved: false,
+          })
+        );
+        return { ...state, missionList: newMissions };
+      }
     });
   },
 });

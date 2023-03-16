@@ -205,3 +205,30 @@ ul {
 .back-home {
   margin: 1rem auto;
 }
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  min-height: unset;
+  gap: 1rem;
+}
+
+.display-items {
+  border: 0.5pt solid grey;
+  border-radius: 0.25rem;
+}
+
+.display-items li {
+  padding: 0.5rem;
+  border-bottom: 0.5pt solid grey;
+}
+
+.display-items:last-child {
+  border-bottom: none;
+}
+
+.display-items li p {
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+}
