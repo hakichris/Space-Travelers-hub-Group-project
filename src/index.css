@@ -16,6 +16,7 @@ html {
   --clr-primary: #3a86ff;
   --clr-grey: #6d6875;
   --clr-danger: #d90429;
+  --clr-background: #f5f6fa;
 
   /* shadow */
   --shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -31,7 +32,7 @@ html {
 }
 
 body {
-  background: white;
+  background: var(--clr-background);
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   line-height: 1.75;
@@ -123,4 +124,111 @@ ul {
   color: rgb(0, 102, 255);
   font-size: 1.1rem;
   padding: 0.25rem 0.5rem;
+}
+
+.section-container {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
+  align-items: center;
+  justify-content: left;
+}
+
+.title-three {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.mission-status {
+  padding: 0.15rem;
+  text-transform: capitalize;
+  color: white;
+}
+
+.active-mission {
+  background: rgb(0, 143, 112);
+}
+
+.inactive-mission {
+  background: var(--clr-grey);
+}
+
+.btn {
+  padding: 0.5rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.btn-danger {
+  border: 1pt solid var(--clr-danger);
+  color: var(--clr-danger);
+}
+
+.btn-neutral {
+  border: 1pt solid var(--clr-grey);
+  color: var(--clr-grey);
+}
+
+.desc {
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.error-sect {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-sect h1 {
+  text-align: center;
+}
+
+.back-home {
+  margin: 1rem auto;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  min-height: unset;
+  gap: 1rem;
+}
+
+.display-items {
+  border: 0.5pt solid grey;
+  border-radius: 0.25rem;
+}
+
+.display-items li {
+  padding: 0.5rem;
+  border-bottom: 0.5pt solid grey;
+}
+
+.display-items:last-child {
+  border-bottom: none;
+}
+
+.display-items li p {
+  text-transform: capitalize;
+  margin: 0.5rem 0;
 }
