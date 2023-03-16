@@ -17,11 +17,11 @@ const initialState = {
 const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
-  reducer: {
-    ToggleReserved: (state, action) => {
+  reducers: {
+    toggleReserved: (state, action) => {
       const newState = state.rocket.map((rocket) => {
         if (rocket.id !== action.payload) return rocket;
-        return { ...rocket, reserved: true };
+        return { ...rocket, reserved: !rocket.reserved };
       });
       console.log(newState);
       return { ...state, rocket: newState };
