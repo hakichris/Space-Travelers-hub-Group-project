@@ -14,7 +14,7 @@ const Profile = () => {
       <div>
         <h2 className="title"> My Rockects</h2>
         <table>
-          <ul className="display">
+          <ul className="display me">
             { rocketFiltered.length > 0 ? (
               rocketFiltered.map((rocket) => (
                 <tr key={rocket.id}>
