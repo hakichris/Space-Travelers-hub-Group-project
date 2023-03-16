@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
 export const getrocket = createAsyncThunk(
   'rocket/getrocket', async () => {
-    const res = await axios(url);
-    const response = res.data;
+    const res = await fetch(url);
+    const response = await res.data;
     return response;
   },
 );
