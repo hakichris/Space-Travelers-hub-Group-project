@@ -23,7 +23,6 @@ const rocketSlice = createSlice({
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: !rocket.reserved };
       });
-      console.log(newState);
       return { ...state, rocket: newState };
     },
   },
